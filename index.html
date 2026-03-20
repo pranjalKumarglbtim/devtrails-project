@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Fraud Detection Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚨 Fraud Detection System</h2>
+
+    <input type="text" id="location" placeholder="Enter Location">
+    <input type="number" id="speed" placeholder="Speed (km/h)">
+    <input type="number" id="accounts" placeholder="Accounts from same device">
+
+    <button onclick="checkFraud()">Check Status</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function checkFraud() {
+    let speed = document.getElementById("speed").value;
+    let accounts = document.getElementById("accounts").value;
+
+    let riskScore = 0;
+
+    // Basic logic (demo)
+    if (speed > 120) riskScore += 1;
+    if (accounts > 2) riskScore += 1;
+
+    let result = document.getElementById("result");
+
+    if (riskScore == 0) {
+        result.innerHTML = "✅ Genuine User";
+        result.style.color = "green";
+    } else if (riskScore == 1) {
+        result.innerHTML = "⚠️ Suspicious Activity";
+        result.style.color = "orange";
+    } else {
+        result.innerHTML = "❌ High Fraud Risk";
+        result.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>
