@@ -13,6 +13,14 @@ Instead of trusting only GPS, our system uses multiple checks to make better dec
 
 ---
 
+ System Architecture
+- Data Collection Layer
+- Fraud Detection Layer
+- Risk Scoring Engine
+- Verification & Review System
+
+--- 
+
  Adversarial Defense & Anti-Spoofing Strategy
 
  1. How we detect real vs fake users
